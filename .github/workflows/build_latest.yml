@@ -76,9 +76,7 @@ jobs:
       - run: dotnet publish BBDown -r linux-arm64 -c Release -p:CppCompilerAndLinker=clang-9 -p:SysRoot=/crossrootfs/arm64 -o artifact
       - run: aarch64-linux-gnu-strip artifact/BBDown
       - name: A debugger for actions
-       # You may pin to the exact commit or the version.
-       # uses: shaowenchen/debugger-action@88bdf1618143bd64c64d9c22621802830a470025
-      uses: shaowenchen/debugger-action@v2
+        uses: shaowenchen/debugger-action@v2
       - name: Upload Artifact[linux-arm64]
         uses: actions/upload-artifact@v1.0.0
         with:
